@@ -32,6 +32,7 @@ kotlin {
         val androidMain by getting {
             dependencies {
                 implementation("io.ktor:ktor-client-android:$ktorVersion")
+                implementation("com.google.code.gson:gson:2.8.9")
             }
         }
         val androidTest by getting {

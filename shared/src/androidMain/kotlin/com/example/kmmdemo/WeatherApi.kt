@@ -1,5 +1,6 @@
 package com.example.kmmdemo
 
+import com.google.gson.Gson
 import io.ktor.client.*
 import io.ktor.client.engine.android.*
 import io.ktor.client.request.*
@@ -15,5 +16,10 @@ actual class WeatherApi {
             e.printStackTrace()
         }
         return null
+    }
+
+    fun convertJson(jsonString: String): WeatherData {
+        val gson = Gson()
+        return gson.fromJson(jsonString, WeatherData::class.java)
     }
 }
